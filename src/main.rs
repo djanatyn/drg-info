@@ -12,7 +12,6 @@ fn main() -> io::Result<()> {
     }
     let filename = &args[1];
 
-    println!("{:#?}", filename);
     let mut file = fs::File::open(filename)?;
     let mut data = Vec::new();
     file.read_to_end(&mut data)?;
@@ -21,7 +20,7 @@ fn main() -> io::Result<()> {
 
     let result = SaveFile::new(&mut data, &guids).expect("failed to parse");
 
-    println!("{:#?}", result.matrix_cores);
+    println!("{}", serde_json::to_string(&result.matrix_cores)?);
 
     Ok(())
 }
