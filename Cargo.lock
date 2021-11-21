@@ -5,7 +5,7 @@ version = 3
 [[package]]
 name = "deeprockgalactic-saveeditor"
 version = "0.1.0"
-source = "git+https://github.com/localcc/deeprockgalactic-saveeditor#22ebf4d3b1c4d3a9e94544ae50ffc77a4a5ca9c5"
+source = "git+https://github.com/localcc/deeprockgalactic-saveeditor?rev=22ebf4d3b1c4d3a9e94544ae50ffc77a4a5ca9c5#22ebf4d3b1c4d3a9e94544ae50ffc77a4a5ca9c5"
 dependencies = [
  "hex",
  "memchr",
