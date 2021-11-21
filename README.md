@@ -24,6 +24,13 @@ SUBCOMMANDS:
     parse      Parse save file and output as JSON 
 ```
 
+# Building
+
+```bash
+; git clone https://github.com/djanatyn/drg-info
+; cd drg-info && cargo run -- help
+```
+
 # Related
 * https://github.com/localcc/deeprockgalactic-saveeditor
 * https://github.com/rob0rt/drg-save-parser
