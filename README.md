@@ -24,12 +24,48 @@ SUBCOMMANDS:
     parse      Parse save file and output as JSON 
 ```
 
+
+``` sh
+; drg-info missing "$DRG_SAVE_FILE" \
+    | jq '{ missing_overclocks: .overclocks | length, missing_cosmetics: .cosmetics | length}'
+```
+```json
+{
+  "missing_overclocks": 34,
+  "missing_cosmetics": 41
+}
+
+```
+
+```sh
+; drg-info missing "$DRG_SAVE_FILE" \
+    | jq '.overclocks | first'
+``` 
+```json
+{
+  "class": "Scout",
+  "weapon": "DRAK-25 Plasma Carbine",
+  "name": "Aggressive Venting",
+  "cost": {
+    "credits": 8000,
+    "bismor": 130,
+    "croppa": 95,
+    "enor": 80,
+    "jadiz": 0,
+    "magnite": 0,
+    "umanite": 0
+  },
+  "state": "Unacquired"
+}
+```
+
 # Building
 
 ```bash
 ; git clone https://github.com/djanatyn/drg-info
 ; cd drg-info && cargo run -- help
 ```
+
 
 # Related
 * https://github.com/localcc/deeprockgalactic-saveeditor
