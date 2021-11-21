@@ -6,8 +6,9 @@ use serde::Serialize;
 use std::io::Read;
 use std::{env, fs, io, path};
 
+/// Command line interface to localcc/deeprockgalactiic-saveeditor features.
 #[derive(Parser, Debug)]
-#[clap(version = "1.0", author = "djanatyn")]
+#[clap(version = "1.0", author = "djanatyn <djanatyn@gmail.com>")]
 struct Opts {
     #[clap(subcommand)]
     subcmd: SubCommand,
@@ -15,7 +16,7 @@ struct Opts {
 
 #[derive(Parser, Debug)]
 enum SubCommand {
-    /// Parse save file (using localcc/deeprockgalactic-saveeditor) and output as JSON.
+    /// Parse save file and output as JSON.
     Parse(Parse),
     /// Output missing overclocks and cosmetics from save file as JSON.
     Missing(Missing),
