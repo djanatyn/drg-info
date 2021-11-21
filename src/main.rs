@@ -1,18 +1,19 @@
-use std::io;
-use std::env;
-use std::fs;
+use clap::Parser;
+use deeprockgalactic_saveeditor::deep_rock_galactic::SaveFile;
 use std::io::Read;
-use deeprockgalactic_saveeditor::deep_rock_galactic::{SaveFile};
+use std::{env, fs, io, path};
+
+#[derive(Parser, Debug)]
+#[clap(version = "1.0", author = "djanatyn")]
+struct Opts {
+    #[clap(parse(from_os_str))]
+    save_file: path::PathBuf,
+}
 
 fn main() -> io::Result<()> {
-    let args = env::args().collect::<Vec<String>>();
-    if args.len() != 2 {
-        eprintln!("usage: {} <save-file>", &args[0]);
-        std::process::exit(1);
-    }
-    let filename = &args[1];
+    let opts = Opts::parse();
 
-    let mut file = fs::File::open(filename)?;
+    let mut file = fs::File::open(&opts.save_file)?;
     let mut data = Vec::new();
     file.read_to_end(&mut data)?;
 
