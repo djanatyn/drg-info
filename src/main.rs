@@ -6,7 +6,7 @@ use serde::Serialize;
 use std::io::Read;
 use std::{env, fs, io, path};
 
-/// Command line interface to localcc/deeprockgalactiic-saveeditor features.
+/// Command line interface to localcc/deeprockgalactic-saveeditor features.
 #[derive(Parser, Debug)]
 #[clap(version = "1.0", author = "djanatyn <djanatyn@gmail.com>")]
 struct Opts {
